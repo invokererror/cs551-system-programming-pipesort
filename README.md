@@ -13,3 +13,4 @@ Type `make` in a shell for generating the executable "pipesort". Type `make clea
 
 ## Questions
 - why does my program work without my knowledge that there are Unicode characters present in the test file `test_files/large`? I used `fgetc` to read a `char` from `stdin` in parser process.
+- utilizing `pv(1)`, I observed that throughput greatly increased with `-n 8`, i.e. number of sorter processes is 8. I guess the reason is that this is the point where my OS utilizes multicore and finally the effect of parallelism shows up. This leads me to the idea that this can implement parallel sort, which Java has API for in `java.util.Arrays.parallelSort` vs `java.util.Arrays.sort`.
